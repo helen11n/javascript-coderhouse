@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Work+Sans:wght@402&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>Complejo deportivo</title>
+
+  
+</head>
+<body>
+  
+  <header>
+  
+    <nav class="navbar navbar-expand-xl navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">COMPLEJO DEPORTIVO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i><ion-icon name="menu-outline" size="large"></ion-icon>
+            </i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+           
+            <li class="nav-item">
+              <a class="nav-link" id="ir-servicios" href="#">SERVICIOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="ir-reservas-online" href="#">RESERVAS ONLINE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">UBICACIÓN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACTO</a>
+            </li>
+            
+          </ul>
+          <div id="reservasMenu" class="reservasMenu">
+            <span>MIS RESERVAS</span>
+          </div>  
+          </div>
+         
+        </div>
+        
+      </div> <!--container-->
+      
+     
+    </nav>
+   
+    <div id="sidebar" class="sidebar">
+      <div class="menu-reservas">
+        
+        <div class="close-menu">
+          <ion-icon name="close-outline"></ion-icon>
+        </div>
+        
+        
+        <div class="reservas-content">
+          <div class="row">
+            <div class="col-12">
+              
+                <h2 class="titulo">MIS RESERVAS</h2>
+                
+            </div>  
+          </div>
+           <table class="table" id="tableReservas">
+            <thead id="theadReservas">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Cancha</th>
+                <th scope="col">Día</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Total a pagar</th>
+              </tr>
+            </thead>
+         <!--  <tbody id="lista-reservas">
+
+            </tbody>--> 
+           </table>
+        </div>
+
+
+        <div class="sin-reservas" id="sin-reservas">
+         
+        </div>
+      </div>
+  </div>
+  </header>
+
+  <section class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+       
+        <div class="col-lg-6">
+            <div class="hero-text">
+              <h1 class="">Las mejores canchas de la ciudad</h1>
+              <a href="#reservas" class="btn" >Reservá tu cancha</a>
+            </div> 
+            
+        </div>
+        <div class="col-lg-6">
+          <div class="d-flex justify-content-center">
+          <img class="gallery-hero" src="images/hero-1.png" class="img-fluid mx-auto d-block" alt="">
+        </div>
+        </div> 
+    </div>
+
+  
+  </section>
+
+  <section class="servicios" id="servicios">
+    <div class="custom-shape-divider-top-1616717343">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+  </div>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-12">
+          
+            <h2 class="titulo">SERVICIOS</h2>
+            
+        </div>  
+      </div>
+
+     
+      <div class="row row-cols-md-4 row-cols-sm-2 row-cols-1">
+        <div class="col">
+          <div class="mb-5 servicio-content">
+            <img src="images/tenis-icon.png" alt="Tenis" class="img-fluid">
+            <h5 class="mt-3">4 canchas Tenis</h5>
+            <p>Polvo de ladrillo</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-5 servicio-content">
+            
+            <img src="images/futbol-icon.png" alt="Fútbol" class="img-fluid">
+            <h5 class="mt-3">6 canchas de fútbol 5, y 4 canchas de fúbol 8</h5>
+            <p>De cesped sintético</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-5 servicio-content">
+          <img src="images/paddle-icon.png" alt="Paddle" class="img-fluid">
+
+            <h5 class="mt-3">3 canchas de padel</h5>
+            <p>Techadas</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-5 servicio-content">
+            <img src="images/torneos-icon.png" alt="Torneos" class="img-fluid">
+
+            <h5 class="mt-3">Organización de torneos</h5>
+            <p>Femeninos y masculinos</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-5 servicio-content">
+            <img src="images/buffet-icon.png" alt="Buffet" class="img-fluid">
+
+            <h5 class="mt-3">Buffet para 3er tiempo</h5>
+            <p>Opciones veganas y sin gluten</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-5 servicio-content">
+            <img src="images/grabar-icon.png" alt="Grabar" class="img-fluid">
+
+            <h5 class="mt-3">¡Grabá tus partidos!</h5>
+            <p>Servicio con costo adicional</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-5 servicio-content">
+            <img src="images/vestuarios-icon.png" alt="Vestuarios" class="img-fluid">
+
+            <h5 class="mt-3">Vestuarios con duchas</h5>
+            <p>Damas y caballeros</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-5 servicio-content">
+            <img src="images/cumple-icon.png" alt="Cumpleaños" class="img-fluid">
+
+            <h5 class="mt-3">Festejá tu cumple</h5>
+           <p>Salón exclusivo para eventos</p>
+          </div>
+        </div>
+
+  </div>
+      
+    </div>   
+    <div class="custom-shape-divider-bottom-1616724318">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+  </div>
+    
+  </section>
+
+  <section class="gallery-img">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="gallery-fb">
+        <div class="col-3">
+         <a href="images/gallery1.jpg" data-fancybox="gallery">
+           <img src="images/gallery1.jpg" alt="" />
+         </a>
+       </div>
+         <div class="col-3">
+         <a href="images/gallery2.jpg" data-fancybox="gallery">
+           <img src="images/gallery2.jpg" alt="" />
+         </a>
+       </div>
+         <div class="col-3">
+         <a href="images/gallery3.jpg" data-fancybox="gallery">
+           <img src="images/gallery3.jpg" alt="" />
+         </a>
+       </div>
+         <div class="col-3">
+         <a href="images/gallery4.jpg" data-fancybox="gallery">
+           <img src="images/gallery4.jpg" alt="" />
+         </a>
+       </div>
+        </div>
+       </div>
+       <div class="row">
+         <div class="gallery-fb">
+         <div class="col-3">
+          <a href="images/gallery5.jpg" data-fancybox="gallery">
+            <img src="images/gallery5.jpg" alt="" />
+          </a>
+        </div>
+          <div class="col-3">
+          <a href="images/gallery6.jpg" data-fancybox="gallery">
+            <img src="images/gallery6.jpg" alt="" />
+          </a>
+        </div>
+          <div class="col-3">
+          <a href="images/gallery7.jpg" data-fancybox="gallery">
+            <img src="images/gallery7.jpg" alt="" />
+          </a>
+        </div>
+          <div class="col-3">
+          <a href="images/gallery8.jpg" data-fancybox="gallery">
+            <img src="images/gallery8.jpg" alt="" />
+          </a>
+        </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="reservas" id="reservas">
+      <div class="container">
+        
+        <div class="row">
+              <div class="col-lg-8 mx-auto col-md-12">
+                <div class="container-form">
+                  <div class="intro-reservas">
+                      <h2>Hacé tu Reserva</h2>
+                    <p>Todas los turnos tienen una duración de una hora</p>
+                    </div>  
+                  
+                    <form action="" id="formReservas">
+                      <div id="first" class="first">
+                      <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                          <!-- Name input -->
+                          <div class="form-group">
+                            <label>Ingresá tu nombre</label>
+                            <input type="text" class="form-control" id="nombre" />
+                            <span class="error" id="errorNombre" ></span>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                          <!-- Email input -->
+                          <div class="form-group">
+                            <label>Ingresá un correo electrónico</label>
+                            <input type="text" class="form-control" id="email" >
+                            <span class="error" id="errorEmail" ></span>
+                          </div>
+                        </div>
+                      </div>  <!-- row -->
+                    
+                      <div class="row row-cols-md-3 row-cols-sm-2 row-cols-2">
+                        <div class="col-lg-4 col-md-12">
+                          <!-- Cancha input -->
+                          <div class="form-group">
+                            <label>Elegí la cancha</label>
+                            <select class="form-select" id="tipoCancha" name="cancha">
+                              <option value="">Seleccioná</option>
+                            </select>
+                            <span class="error" id="errorCancha" ></span>
+                          </div>
+
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                          <!-- Dia input -->
+                          <div class="form-group">
+                            <label>Elegí el día</label>
+                            <input class="form-control" type="date" min="2021-04-01" max="2021-05-10" id="diaIngresado">
+                            <span class="error" id="errorDia" ></span>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                          <!-- Horario input -->
+                          <div class="form-group">
+                            <label>Elegí el horario</label>
+                            <select class="form-select" id="horarioIngresado" name="horarios" >
+                              <option value="" >Seleccioná</option>
+                              
+                            </select>
+                            <span class="error" id="errorHorario" ></span>
+                          </div>
+                        </div>
+                      </div>  <!-- row -->
+                    </div>
+                      
+                      <div class="row">
+                        
+                      </div>  <!-- row -->
+
+                  </form>
+                  <div class="row">
+                    <div class="col mx-auto">
+                      <div class="d-flex">
+                        <div class="col">
+                        <div class="preciocancha" id="preciocancha"></div>
+                        </div>
+                        <div class="col">
+                          <div class="d-flex justify-content-center align-items-center">
+                            <input type="submit" class="btn btn-primary" id="verReserva" value="Siguiente">
+                          </div>
+                        </div>  
+                      </div>
+            
+                    </div>
+                </div>  <!-- row -->
+           
+     
+            <div class="row">
+              <div class="col">
+                <div class="d-flex justify-content-center text-center">
+                  <div class="loading" id="loading">
+                    <img src="images/loading.gif" alt="">
+                  </div>  
+                  </div>
+              </div>
+            </div> <!-- row -->
+      
+
+
+              <div class="row">
+              <div class="col-lg-8 mx-auto">
+
+                        <div class="datosIngresados" id="datosIngresados" style="display: none;">
+                  
+                        <div class="titulo-reserva mb-3">
+                          
+                        </div>
+                          <div class="datos-reserva mb-1"></div> 
+                          <div class="datos-reserva mb-1"></div> 
+                          <div class="datos-reserva mb-1"></div> 
+                          <div class="datos-reserva mb-5"></div> 
+                        <div class="row">
+                          <div class="col">
+                          <div class="d-flex justify-content-center align-items-center container-boton">
+                              <div class="boton-reserva"></div>   
+                          </div>   
+                        </div> 
+                        <div class="col">
+                          <div class="d-flex justify-content-center align-items-center container-boton">    
+                              <div class="boton-reserva"></div>  
+                          </div>
+                        </div>
+                        </div> <!-- row --> 
+                      </div>
+
+                  </div>
+                </div>  
+
+              </div>
+             </div>  <!-- col -->
+           </div>  <!-- row -->
+        </div><!-- container -->
+      
+    </section>
+   
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer">
+           <p class="text-center">©2021 Desarrollado por Elena De Leo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</footer>
+
+
+  <!--  Popper and Bootstrap JS -->
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="js/ajax.js"></script>
+
+<script src="js/functions.js"></script>
+<script src="js/canchasjs.js"></script> 
+  
+</body>
+</html>
